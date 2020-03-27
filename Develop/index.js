@@ -54,7 +54,7 @@ function init() {
     api.getUser(responses.Username)
     .then(({data})=>{
         console.log(data);
-        writeToFile("readme.md", data)
+        writeToFile("README.md", data)
     })
 })
 }
