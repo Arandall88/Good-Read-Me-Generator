@@ -1,6 +1,6 @@
 # Good-Read-Me-Generator
 ## Read me Generator
-### Username 
+### Github Username 
 ### Title
 ### Description
 ### License
