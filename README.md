@@ -1,23 +1,20 @@
-# Good-Read-Me-Generator
-># Installation instructions
-run npm install 
-## Read me Generator
-### User Story
-AS A developer
+# Good-Read-Me-Generator [![NPM version](https://badge.fury.io/js/Good-Read-Me-Generator.svg)](https://npmjs.org/package/Good-Read-Me-Generator) [![Build Status](https://travis-ci.org/Arandall88/Good-Read-Me-Generator.svg?branch=master)](https://travis-ci.org/Arandall88/Good-Read-Me-Generator)
 
-I WANT a README generator
+> portfolio
 
-SO THAT I can easily put together a good README for a new project
-### Github Username 
-### Title
-### Description
-### License
->MIT license required
-### Installation
-### Tests
-### Usage 
+## Installation
 
+```sh
+$ npm install --save Good-Read-Me-Generator
+```
 
+## Usage
 
+```js
+var goodReadMeGenerator = require('Good-Read-Me-Generator');
+goodReadMeGenerator();
+```
 
+## License
 
+MIT © [Angel R. Randall]()
