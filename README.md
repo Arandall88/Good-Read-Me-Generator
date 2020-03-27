@@ -6,6 +6,7 @@ run npm install
 ### Title
 ### Description
 ### License
+>MIT license required
 ### Installation
 ### Tests
 ### Usage 
