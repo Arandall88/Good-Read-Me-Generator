@@ -1,5 +1,5 @@
 # Good-Read-Me-Generator
-# Installation instructions
+># Installation instructions
 run npm install 
 ## Read me Generator
 ### Github Username 
