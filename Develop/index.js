@@ -1,8 +1,15 @@
 const fs = require("fs");
-const axios = require("axios");
 const inquirer = require("inquirer");
+const api = require("./utils/api");
+const path = require("path");
+   
 
-     inquirer
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(),fileName),`!(${data.avatar_url})`);
+}
+
+function init() {
+    inquirer
     .prompt([
       /* Pass your questions in here */
           {
@@ -11,48 +18,45 @@ const inquirer = require("inquirer");
           },
       {
           message:"What license are you using?",
-          license:"License"
+          name:"License"
       },
       {
           message:"What is the project title?",
-          title:"Title"
+          name:"Title"
       },
       {
           message:"Please provide a description of your project",
-          description:"Description"
-      },
-      {
-          message:"Please provide a table of contents",
-          contents:"Table of contents"
+          name:"Description"
       },
       {
           message:"What are the installation instructions?",
-          installation:"installation"
+          name:"installation"
       },
       {
           message:"Provide the usage",
-          usage:"Usage"
+          name:"Usage"
       },
       {
           message:"Please list any contributors.",
-          contributors:"Contributers"
+          name:"Contributers"
       },
       {
           message:"Please provide information about the tests.",
-          tests:"Tests"
+          name:"Tests"
       },
       {
           message:"Would you like to add any questions?",
-          questions:"questions"
+          name:"questions"
       },
     
-]);
-
-function writeToFile(fileName, data) {
-}
-
-function init() {
-
+]).then((responses)=>{
+    
+    api.getUser(responses.Username)
+    .then(({data})=>{
+        console.log(data);
+        writeToFile("readme.md", data)
+    })
+})
 }
 
 init();
